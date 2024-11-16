@@ -1,0 +1,5 @@
+<configs>
+
+<setattribute xpath="/blocks/block/property[@name='CreativeMode']" name="value">Player</setattribute>
+<setattribute xpath="/blocks/block[@name='manholeHatch']/property[@name='OnlySimpleRotations']" name="value" >false</setattribute>
+</configs>
