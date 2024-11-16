@@ -1,5 +1,0 @@
-<configs>
-
-<setattribute xpath="/blocks/block/property[@name='CreativeMode']" name="value">Player</setattribute>
-
-</configs>
