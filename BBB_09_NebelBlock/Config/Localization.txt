@@ -1,0 +1,16 @@
+key,English,German
+
+Nebel_Block_00,"Nebel 0m White","Nebel 0m Weiss"
+Nebel_Block_00Desc,"Mach Nebel","Mach Nebel"
+
+Nebel_Block_01,"Nebel 1m White","Nebel 1m Weiss"
+Nebel_Block_01Desc,"Mach Nebel","Mach Nebel"
+
+Nebel_Block_02,"Nebel 2m White","Nebel 2m Weiss"
+Nebel_Block_02Desc,"Mach Nebel","Mach Nebel"
+
+Nebel_Block_03,"Nebel 3m White","Nebel 3m Weiss"
+Nebel_Block_03Desc,"Mach Nebel","Mach Nebel"
+
+Nebel_Block_04,"Nebel 4m White","Nebel 4m Weiss"
+Nebel_Block_04Desc,"Mach Nebel","Mach Nebel"
