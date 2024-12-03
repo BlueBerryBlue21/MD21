@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+	<Name value="DosenFood" />
+	<DisplayName value="Dosen Food" />
+	<Description value="3D Essen" />
+	<Author value="BlueBerryBlue" />
+	<Version value="1.1.0.4" />
+	<Website value="" />
+	<SkipWithAntiCheat value="true" />
+</xml>
