@@ -1,0 +1,4 @@
+key,English,German
+
+foodGoldenEggBBB,"Golden Egg Tribute M.Fox","Goldenes Ei Tribut M.Fox"
+foodGoldenEggBBBDesc,"GoldenEgg are very delicious.\n\nTribute M.Fox.\nThx M.Fox.,,"Golden Egg sind Lecker schmecker.\n\nTribut M.Fox.\nThx M.Fox."

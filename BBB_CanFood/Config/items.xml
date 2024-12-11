@@ -1,0 +1,491 @@
+<configs>
+
+<!-- Golden Egg Trubute an M:Fox -->
+
+<append xpath="/items">
+
+<item name="foodGoldenEggBBB">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="31"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/GoldenEgg.unity3d?GameObject_GoldenEgg.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/GoldenEgg.unity3d?GameObject_GoldenEgg.prefab"/>
+	<property name="Material" value="Morganic"/>
+	<property name="TintColor" value="255, 215, 0"/>
+	<property name="Stacknumber" value="125"/> <!-- STK resource -->
+	<property name="EconomicValue" value="1000"/>
+	 <property name="CustomIcon" value="foodEgg"/>
+	<property name="CustomIconTint" value="FFD700"/>
+	<property name="SoundPickup" value="egg_grab"/>
+	<property name="SoundPlace" value="egg_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="50"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="100"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</item>
+
+</append>
+
+
+<!-- Fruits -->
+
+<setattribute xpath="/items/item[@name='foodCropYuccaFruit']/property[@name='Meshfile']" name="value" >#@modfolder:Resources/fruit_yucca.unity3d?GameObject_fruit_yucca.prefab</setattribute>
+<setattribute xpath="/items/item[@name='foodCornBread']/property[@name='Meshfile']" name="value" >#@modfolder:Resources/cornbread.unity3d?GameObject_cornbread.prefab</setattribute>
+<setattribute xpath="/items/item[@name='foodEgg']/property[@name='Meshfile']" name="value" >#@modfolder:Resources/egg.unity3d?GameObject_egg.prefab</setattribute>
+<setattribute xpath="/items/item[@name='foodCropBlueberries']/property[@name='Meshfile']" name="value" >#@modfolder:Resources/fruit_blueberryPrefab.unity3d?GameObject_fruit_blueberryPrefab</setattribute>
+
+
+<!-- Can Food -->
+
+<set xpath="/items/item[@name='foodCanBeef']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_beefPrefab.unity3d?GameObject_can_beefPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_beefPrefab.unity3d?GameObject_can_beefPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanChicken']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_chickenPrefab.unity3d?GameObject_can_chickenPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_chickenPrefab.unity3d?GameObject_can_chickenPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanLamb']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_lambPrefab.unity3d?GameObject_can_lambPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_lambPrefab.unity3d?GameObject_can_lambPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanCatfood']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_catfoodPrefab.unity3d?GameObject_can_catfoodPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_catfoodPrefab.unity3d?GameObject_can_catfoodPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanDogfood']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_dogfoodPrefab.unity3d?GameObject_can_dogfoodPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_dogfoodPrefab.unity3d?GameObject_can_dogfoodPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanChili']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_chiliPrefab.unity3d?GameObject_can_chiliPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_chiliPrefab.unity3d?GameObject_can_chiliPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanTuna']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_tunaPrefab.unity3d?GameObject_can_tunaPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_tunaPrefab.unity3d?GameObject_can_tunaPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanPasta']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_pastaPrefab.unity3d?GameObject_can_pastaPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_pastaPrefab.unity3d?GameObject_can_pastaPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanMiso']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_misoPrefab.unity3d?GameObject_can_misoPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_misoPrefab.unity3d?GameObject_can_misoPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanPeas']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_peasPrefab.unity3d?GameObject_can_peasPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_peasPrefab.unity3d?GameObject_can_peasPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanPears']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_pearsPrefab.unity3d?GameObject_can_pearsPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_pearsPrefab.unity3d?GameObject_can_pearsPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanSoup']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_soupPrefab.unity3d?GameObject_can_soupPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_soupPrefab.unity3d?GameObject_can_soupPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="5">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanStock']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_stock.unity3d?GameObject_can_stock.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_stock.unity3d?GameObject_can_stock.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="5"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="3"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="3">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$waterAmountAdd" operation="add" value="10"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanSham']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_hamPrefab.unity3d?GameObject_can_hamPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_hamPrefab.unity3d?GameObject_can_hamPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<property name="UnlockedBy" value="foodCanShamSchematic"/> <!-- SCHEMATIC_ONLY -->
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+<set xpath="/items/item[@name='foodCanSalmon']">
+	<property name="Tags" value="food,foodSkill,fitness,farmerFoodBonus"/>
+	<property name="HoldType" value="3"/>
+	<property name="DisplayType" value="foodRaw"/>
+	<property name="Meshfile" value="#@modfolder:Resources/can_salmonPrefab.unity3d?GameObject_can_salmonPrefab.prefab"/>
+	<property name="DropMeshfile" value="#@modfolder:Resources/can_salmonPrefab.unity3d?GameObject_can_salmonPrefab.prefab"/>
+	<property name="Material" value="Mmetal"/>
+	<!-- <property name="Weight" value="5"/> -->
+	<property name="EconomicValue" value="60"/>
+	<property name="Stacknumber" value="10"/> <!-- STK food -->
+	<property name="SoundPickup" value="canfood_grab"/>
+	<property name="SoundPlace" value="canfood_place"/>
+	<property class="Action0">
+		<property name="Class" value="Eat"/>
+		<property name="Delay" value="1.0"/>
+		<property name="Sound_start" value="player_eating"/>
+		<!-- <property name="Create_item" value="drinkCanEmpty"/> -->
+	</property>
+	<property name="Group" value="Food/Cooking,CFFood/Cooking"/>
+	<effect_group tiered="false" name="Food Tier 0">
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="$foodAmountAdd" operation="add" value="15"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthAmount" operation="add" value="7"/>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="ModifyCVar" cvar="foodHealthFarmer" operation="set" value="7">
+			<requirement name="HasBuff" buff="buffFarmerSetBonus"/></triggered_effect>
+		<triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="buffProcessConsumables"/>
+	</effect_group>
+</set>
+
+
+</configs>

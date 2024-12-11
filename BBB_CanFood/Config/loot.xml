@@ -1,0 +1,10 @@
+<configs>
+
+<!-- Golden Egg finden veryLowDelayed -->
+<append xpath="/lootcontainers/lootgroup[@name='groupDumpsterFood' or @name='groupBirdNest02' or @name='groupIngredientsRare']">
+
+	<item name="foodGoldenEggBBB" count="1" loot_prob_template="veryLowDelayed"/>
+
+</append>
+
+</configs>
